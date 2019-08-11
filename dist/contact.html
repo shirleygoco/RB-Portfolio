@@ -50,42 +50,43 @@
       <h2 class="sm-heading">
         This Is How You Can Reach Me...
       </h2>
-      <div class="boxes">
-        <div><span class="text-secondary">Email:</span> me@rbgoco.com</div>
-      </div>
 
       <div class="boxes">
-        <div><span class="text-secondary">Phone:</span> 0427920247</div>
+        <form id="contact_form" name="contact" method="POST" data-netlify="true">
+          
+            <div class="form_items">
+              <label for="firstname">First Name: </label>
+              <input type="text" id="firstname" required />
+            </div>
+            
+            <div class="form_items">
+              <label for="firstname">Last Name: </label>
+              <input type="text" id="lastname"/>
+            </div>
+            <div class="form_items">
+              <label for="email">Email: </label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form_items">
+              <label for="phone">Phone: </label>
+              <input type="phone" id="Phone" required />
+            </div>
+            <div class="form_items">
+              <label>Message: </label>
+              <textarea name="message"></textarea>
+            </div>
+            <div data-netlify-recaptcha="true"></div>
+            <div class="form_items">
+              <button id="submit" type="submit">Send</button>
+            </div>
+          </div>      
+        </form>
       </div>
 
-      <div class="boxes">
-        <div>
-          <span class="text-secondary">Address:</span> Sydney, Australia
-        </div>
-      </div>
 
-      <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>Your Name: <input type="text" name="name"/></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email"/></label>
-        </p>
-        <p>
-          <label>Your Phone Number: <input type="tel" name="phone"/></label>
-        </p>
-
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <div data-netlify-recaptcha="true"></div>
-        <p><button type="submit">Send</button></p>
-      </form>
-
-
-      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+      <form class="honeypot" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
         <p class="hidden">
-          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          <label>This is a honeypot: <input name="bot-field" /></label>
         </p>
         <p>
           <label>Email: <input type="text" name="email" /></label>
